@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.belong.smart.mapper.ProfileMapper">
+    <insert id="addFB">
+        insert into feedback (user_id, content)
+        values (#{userId}, #{content});
+    </insert>
+
+    <select id="getDetial" resultMap="map1">
+        -- 7.1 查询用户详细信息
+        SELECT
+            *
+        FROM
+            sys_user as t1, sys_user_role as t2, sys_role as t3, sys_dept as t4
+        WHERE
+            t1.user_id = t2.user_id
+          and
+            t1.user_id = #{id}
+          AND
+            t3.role_id = t2.role_id
+          AND
+            t4.dept_id = t1.dept_id;
+    </select>
+
+    <!--结果集嵌套-->
+    <resultMap id="map1" type="com.belong.smart.entity.vo.ProfileDetialBean">
+        <result property="userId" column="user_id" />
+        <result property="userName" column="user_name" />
+        <result property="nickName" column="nick_name" />
+        <result property="avatar" column="avatar" />
+        <result property="sex" column="sex" />
+        <result property="phonenumber" column="phonenumber" />
+
+        <association property="dept" javaType="com.belong.smart.entity.po.SysDept">
+            <result property="deptId" column="dept_id"/>
+            <result property="deptName" column="dept_name"/>
+            <result property="leader" column="leader"/>
+        </association>
+
+        <association property="role" javaType="com.belong.smart.entity.po.SysRole">
+            <result property="roleId" column="role_id"/>
+            <result property="roleName" column="role_name"/>
+        </association>
+    </resultMap>
+
+
+    <select id="getDetial2" resultType="java.util.Map">
+        -- 7.1 查询用户详细信息
+        SELECT
+            t1.*,
+            JSON_OBJECT('role_name', t3.role_name) as role,
+            JSON_OBJECT('dept_name', t4.dept_name) as dept
+        FROM
+            sys_user as t1, sys_user_role as t2, sys_role as t3, sys_dept as t4
+        WHERE
+            t1.user_id = t2.user_id
+          and
+            t1.user_id = 1
+          AND
+            t3.role_id = t2.role_id
+          AND
+            t4.dept_id = t1.dept_id;
+    </select>
+
+    <select id="getUserBaseInfo" resultType="java.util.Map">
+        select *
+        from sys_user where user_id = #{id};
+    </select>
+
+    <select id="getFBList" resultType="java.util.Map">
+        select *
+        from feedback where user_id = #{id};
+    </select>
+
+    <select id="getFBDetial" resultType="java.util.Map">
+        select *
+        from feedback where id = #{id};
+    </select>
+
+
+</mapper>

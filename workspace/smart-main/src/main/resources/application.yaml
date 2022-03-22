@@ -1,0 +1,21 @@
+# 数据库连接配置
+spring:
+  datasource:
+    username: root
+    password: 12345678
+    url: jdbc:mysql://localhost:3306/smart_city_v1
+
+# MP配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 配置日志（默认控制台输出）
+    map-underscore-to-camel-case: true   # 将下划线转换为驼峰
+  mapper-locations: classpath*:mapper/*.xml
+
+
+belong:
+  jwt:
+    SECRET_KEY: belong_token # 密钥
+    ExpiresIn: 604800000   # token有效时间  7天
+
+

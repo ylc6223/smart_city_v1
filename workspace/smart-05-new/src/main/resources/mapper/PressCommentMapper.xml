@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.belong.smart.mapper.PressCommentMapper">
+
+    <select id="selectCommentList" resultType="java.util.Map">
+        SELECT
+            t1.*,
+            t2.nick_name,
+            t2.user_name,
+            t2.avatar
+        FROM
+            press_comment as t1,
+            sys_user as t2
+        WHERE
+            t1.user_id = t2.user_id
+          AND
+            t1.press_id = 1;
+    </select>
+
+
+</mapper>

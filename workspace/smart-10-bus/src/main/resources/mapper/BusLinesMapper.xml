@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.belong.smart.mapper.BusLinesMapper">
+
+    <select id="getStepInfo" resultType="java.util.Map">
+        SELECT
+            t1.lines_id,
+            t1.steps_id,
+            t1.sequence,
+            t2.`name`
+        FROM
+            bus_line_relation as t1,
+            bus_steps as t2
+        WHERE
+            t1.steps_id = t2.id
+          AND
+            t1.lines_id = 2
+    </select>
+</mapper>

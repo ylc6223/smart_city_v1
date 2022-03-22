@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.belong.smart.mapper.ServiceMapper">
+    <select id="findOneService" resultType="java.util.Map">
+        select distinct t2.dict_sort,
+                        t2.*
+        from all_service t1,
+             sys_dict_data t2
+        where t1.service_type = t2.dict_value
+          and t2.dict_type = 'sys_service';
+    </select>
+</mapper>

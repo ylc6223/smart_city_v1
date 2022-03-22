@@ -1,0 +1,2328 @@
+{
+	"info": {
+		"_postman_id": "670203af-cce1-4179-851b-0994ec4499eb",
+		"name": "2021-智慧城市api接口_v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01、用户登录和注册",
+			"item": [
+				{
+					"name": "1.1 登录",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"belong\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.2 注册",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"起飞22\",\n    \"nickName\": \"belong_v\",\n    \"phonenumber\": \"18850454419\",\n    \"sex\": \"1\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/system/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"system",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "02、引导页",
+			"item": [
+				{
+					"name": "2.1 引导页轮播图列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7777/belong/userinfo/rotation/lists?pageNum=1&pageSize=5&type=47",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"belong",
+								"userinfo",
+								"rotation",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "pageNum",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "type",
+									"value": "47"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03、主页面",
+			"item": [
+				{
+					"name": "3.1 查询主页轮播图列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/userinfo/rotation/list?pageNum=1&pageSize=5&type=45",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userinfo",
+								"rotation",
+								"list"
+							],
+							"query": [
+								{
+									"key": "pageNum",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "type",
+									"value": "45"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.2 查询推荐服务",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/service/service/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"service",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.3 查询专题新闻列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/press/press/list/40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"press",
+								"press",
+								"list",
+								"40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.4 查询新闻分类",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/system/dict/data/type/press_category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"system",
+								"dict",
+								"data",
+								"type",
+								"press_category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.5 查询所属分类下的新闻列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/list5?pressCategory=38",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"list5"
+							],
+							"query": [
+								{
+									"key": "pressCategory",
+									"value": "38"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04、服务",
+			"item": [
+				{
+					"name": "4.1 查询服务一级分类",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/04_all-service/list1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"04_all-service",
+								"list1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.2 查询全部服务",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/04_all-service/list2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"04_all-service",
+								"list2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "05、新闻",
+			"item": [
+				{
+					"name": "5.1 查询新闻列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/05_press/list1?pageNum=1&pageSize=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"05_press",
+								"list1"
+							],
+							"query": [
+								{
+									"key": "pageNum",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5.2 查询评论列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/05_press/list2?pageNum=1&pageSize=5&pressId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"05_press",
+								"list2"
+							],
+							"query": [
+								{
+									"key": "pageNum",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "pressId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5.3 新增评论",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZWxvbmciLCJleHAiOjE2NDc1ODE3Nzd9.bwTJ2twhbiuG5HMzhW2jsRtrC6TbIUPrR2DNJ9foOd8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 20,\n    \"pressId\": 1,\n    \"content\": \"非常棒啊\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/05_press/list3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"05_press",
+								"list3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "06、城市地铁",
+			"item": [
+				{
+					"name": "6.1 查询地铁站首页",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/06_metro/list1?currentName=西苑",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"06_metro",
+								"list1"
+							],
+							"query": [
+								{
+									"key": "currentName",
+									"value": "西苑"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6.2 查询地铁站详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/06_metro/list2/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"06_metro",
+								"list2",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "07、个人中心",
+			"item": [
+				{
+					"name": "7.1_获取个人详细信息",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/07_profile/getInfo?id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"07_profile",
+								"getInfo"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7.2_获取用户基本信息",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/07_profile/system/user/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"07_profile",
+								"system",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7.3_修改用户基本信息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 20,\n    \"nickName\": \"belong_ff\",\n    \"idCard\": 3501\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/07_profile/system/user/updata",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"07_profile",
+								"system",
+								"user",
+								"updata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7.4_修改用户密码",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 20,\n    \"oldPwd\": \"111\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/07_profile/system/user/resetPwd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"07_profile",
+								"system",
+								"user",
+								"resetPwd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7.5_查询订单总列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 20,\n    \"oldPwd\": \"111\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/07_profile/userinfo/orders/list?pageNum=1&pageSize=2&userId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"07_profile",
+								"userinfo",
+								"orders",
+								"list"
+							],
+							"query": [
+								{
+									"key": "pageNum",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "2"
+								},
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7.6_查询用户意见反馈列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 20,\n    \"oldPwd\": \"111\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/07_profile/userinfo/feedback/list?userId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"07_profile",
+								"userinfo",
+								"feedback",
+								"list"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7.7_查询用户意见反馈详情",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 20,\n    \"oldPwd\": \"111\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/07_profile/userinfo/feedback/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"07_profile",
+								"userinfo",
+								"feedback",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7.8_新增意见反馈",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 20,\n    \"content\": \"111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/07_profile/userinfo/feedback",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"07_profile",
+								"userinfo",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "08、生活缴费",
+			"item": [
+				{
+					"name": "8.1 查询缴费类型列表",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/08_live/userinfo/feeslist/list?userId=2&classifyId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"08_live",
+								"userinfo",
+								"feeslist",
+								"list"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "classifyId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8.2 查询用户生活缴费信息",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/08_live/userinfo/householder/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"08_live",
+								"userinfo",
+								"householder",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8.3 查询缴费详情",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/08_live/userinfo/electricity/list?userId=1&doorNo=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"08_live",
+								"userinfo",
+								"electricity",
+								"list"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "doorNo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8.4 根据户号缴费",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"userId\": 1,\n    \"doorNo\": 1,\n    \"balance\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/08_live/userinfo/householder",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"08_live",
+								"userinfo",
+								"householder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "09、门诊预约",
+			"item": [
+				{
+					"name": "9.1 医院详情轮播图",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/09_hospital/userinfo/img/list?hospitalId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"09_hospital",
+								"userinfo",
+								"img",
+								"list"
+							],
+							"query": [
+								{
+									"key": "hospitalId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.2 根据医院编号查询医院信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/09_hospital/userinfo/registration/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"09_hospital",
+								"userinfo",
+								"registration",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.3 查询医院列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/09_hospital/userinfo/registration/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"09_hospital",
+								"userinfo",
+								"registration",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.4 搜索医院信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/09_hospital/userinfo/registration/list/search?hospitalName=专",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"09_hospital",
+								"userinfo",
+								"registration",
+								"list",
+								"search"
+							],
+							"query": [
+								{
+									"key": "hospitalName",
+									"value": "专"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.5 查询当前用户下的就诊人卡片",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"必龙同学\",\n    \"cardId\":\"112222222233333333\",\n    \"tel\":\"12345678\",\n    \"sex\":1,\n    \"birthday\":\"2012-06-12\",\n    \"adders\":\"长乐国\",\n    \"userId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/09_hospital/userinfo/patient/list?userId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"09_hospital",
+								"userinfo",
+								"patient",
+								"list"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.6 新增就诊人卡片",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"必龙同学\",\n    \"cardId\":\"112222222233333333\",\n    \"tel\":\"12345678\",\n    \"sex\":1,\n    \"birthday\":\"2012-06-12\",\n    \"adders\":\"长乐国\",\n    \"userId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/09_hospital/userinfo/patient",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"09_hospital",
+								"userinfo",
+								"patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.7 修改就诊人卡片",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"必龙同学\",\n    \"cardId\":\"112222222233333333\",\n    \"tel\":\"222222\",\n    \"sex\":1,\n    \"birthday\":\"2012-06-12\",\n    \"adders\":\"长乐国\",\n    \"id\": 27,\n     \"userId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/09_hospital/userinfo/patient",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"09_hospital",
+								"userinfo",
+								"patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.8 查询专家与普通下的科室分类",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"必龙同学\",\n    \"cardId\":\"112222222233333333\",\n    \"tel\":\"222222\",\n    \"sex\":1,\n    \"birthday\":\"2012-06-12\",\n    \"adders\":\"长乐国\",\n    \"id\": 27,\n     \"userId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/09_hospital/userinfo/types/list?did=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"09_hospital",
+								"userinfo",
+								"types",
+								"list"
+							],
+							"query": [
+								{
+									"key": "did",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.9 查询用户预约列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"必龙同学\",\n    \"cardId\":\"112222222233333333\",\n    \"tel\":\"222222\",\n    \"sex\":1,\n    \"birthday\":\"2012-06-12\",\n    \"adders\":\"长乐国\",\n    \"id\": 27,\n     \"userId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/09_hospital/userinfo/order/list?userId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"09_hospital",
+								"userinfo",
+								"order",
+								"list"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.10 根据ID查询预约详情",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"必龙同学\",\n    \"cardId\":\"112222222233333333\",\n    \"tel\":\"222222\",\n    \"sex\":1,\n    \"birthday\":\"2012-06-12\",\n    \"adders\":\"长乐国\",\n    \"id\": 27,\n     \"userId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/09_hospital/userinfo/order/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"09_hospital",
+								"userinfo",
+								"order",
+								"1"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.11 生成预约单",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"patientName\":\"必龙同学\",\n    \"divisionId\":5,\n    \"typesId\":\"1\",\n    \"moeny\":\"5\",\n    \"userId\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/09_hospital/userinfo/order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"09_hospital",
+								"userinfo",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "10、智慧巴士",
+			"item": [
+				{
+					"name": "10.1 查询巴士路线",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/10_bus/userinfo/lines/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"10_bus",
+								"userinfo",
+								"lines",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10.2 根据路线编号查询路线基本信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/10_bus/userinfo/lines/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"10_bus",
+								"userinfo",
+								"lines",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10.3 根据路线编号查询站点信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/10_bus/userinfo/busStop/list?lineId=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"10_bus",
+								"userinfo",
+								"busStop",
+								"list"
+							],
+							"query": [
+								{
+									"key": "lineId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10.4 新增巴士订单",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"start\":\"泰德大厦\",\n    \"end\":\"大连北站\",\n    \"userName\":\"必龙同学\",\n    \"userTel\":\"12345611\",\n    \"price\":\"8\",\n    \"path\":\"一号线\",\n    \"status\":\"1\",\n    \"userId\":\"1\",\n    \"orderNum\": \"33158742\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/10_bus/userinfo/busOrders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"10_bus",
+								"userinfo",
+								"busOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10.5 查询巴士车订单列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"start\":\"泰德大厦\",\n    \"end\":\"大连北站\",\n    \"userName\":\"必龙同学\",\n    \"userTel\":\"12345611\",\n    \"price\":\"8\",\n    \"path\":\"一号线\",\n    \"status\":\"1\",\n    \"userId\":\"1\",\n    \"orderNum\": \"33158742\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/10_bus/userinfo/busOrders/list?userId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"10_bus",
+								"userinfo",
+								"busOrders",
+								"list"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "11、违章查询",
+			"item": [
+				{
+					"name": "11.1 根据车牌、发动机号车型查询违章情况",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/11_illegal/userinfo/illegal/list?catType=小型汽车&engineNumber=1234&licencePlate=京123",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"11_illegal",
+								"userinfo",
+								"illegal",
+								"list"
+							],
+							"query": [
+								{
+									"key": "catType",
+									"value": "小型汽车"
+								},
+								{
+									"key": "engineNumber",
+									"value": "1234"
+								},
+								{
+									"key": "licencePlate",
+									"value": "京123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11.2 根据违章编号查询违章详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/11_illegal/userinfo/illegal/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"11_illegal",
+								"userinfo",
+								"illegal",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "12、停车场查询",
+			"item": [
+				{
+					"name": "12.1 查询停车场列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/12_park_lot/userinfo/parklot/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"12_park_lot",
+								"userinfo",
+								"parklot",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12.2 查询停车场详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/12_park_lot/userinfo/parklot/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"12_park_lot",
+								"userinfo",
+								"parklot",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12.3 查询停车记录",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/12_park_lot/userinfo/parkrecord/list?plateNumber=京1234",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"12_park_lot",
+								"userinfo",
+								"parkrecord",
+								"list"
+							],
+							"query": [
+								{
+									"key": "plateNumber",
+									"value": "京1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12.4 根据时间查询停车记录",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/12_park_lot/userinfo/parkrecord/list/byTime?entryTime=2020-10-27 09:57:52&outTime=2020-10-27 10:57:57&plateNumber=京1234",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"12_park_lot",
+								"userinfo",
+								"parkrecord",
+								"list",
+								"byTime"
+							],
+							"query": [
+								{
+									"key": "entryTime",
+									"value": "2020-10-27 09:57:52"
+								},
+								{
+									"key": "outTime",
+									"value": "2020-10-27 10:57:57"
+								},
+								{
+									"key": "plateNumber",
+									"value": "京1234"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "13、预约检车",
+			"item": [
+				{
+					"name": "13.1 查询预约须知",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/13_car_check/userinfo/carNotice/grt",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"13_car_check",
+								"userinfo",
+								"carNotice",
+								"grt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13.2 查询所有检车地点",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/13_car_check/userinfo/place/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"13_car_check",
+								"userinfo",
+								"place",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13.3 查询检车点详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/13_car_check/userinfo/place/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"13_car_check",
+								"userinfo",
+								"place",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13.4 预约检车",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"1\",\n    \"carId\":\"1\",\n    \"aptTime\":\"2020-11-11 10:29:02\",\n    \"addressId\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/13_car_check/userinfo/apt",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"13_car_check",
+								"userinfo",
+								"apt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13.5 查询预约检车订单",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"1\",\n    \"carId\":\"1\",\n    \"aptTime\":\"2020-11-11 10:29:02\",\n    \"addressId\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/13_car_check/userinfo/apt/list?userId=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"13_car_check",
+								"userinfo",
+								"apt",
+								"list"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13.6 查询我的车辆",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"1\",\n    \"carId\":\"1\",\n    \"aptTime\":\"2020-11-11 10:29:02\",\n    \"addressId\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/13_car_check/userinfo/cars/list?userId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"13_car_check",
+								"userinfo",
+								"cars",
+								"list"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13.8 修改车辆",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"1\",\n    \"plateNum\":\"京 33333\",\n    \"mainNum\":\"JD12121991DSX223332\",\n    \"carType\":\"轿车\",\n    \"phone\":\"139010888813\",\n    \"mileage\":\"10000000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/13_car_check/userinfo/cars",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"13_car_check",
+								"userinfo",
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13.9 删除车辆信息",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"1\",\n    \"plateNum\":\"京 2222222\",\n    \"mainNum\":\"JD12121991DSX223332\",\n    \"carType\":\"轿车\",\n    \"phone\":\"139010888813\",\n    \"mileage\":\"10000000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/13_car_check/userinfo/cars/12",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"13_car_check",
+								"userinfo",
+								"cars",
+								"12"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "12",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "14、找房子",
+			"item": [
+				{
+					"name": "14.1 查询房源列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/14_house/userinfo/housing/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"14_house",
+								"userinfo",
+								"housing",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14.2 查询房源详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/14_house/userinfo/housing/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"14_house",
+								"userinfo",
+								"housing",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14.3 根据房源名称模糊查询",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/14_house/userinfo/housing/list/byName?sourceName=一",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"14_house",
+								"userinfo",
+								"housing",
+								"list",
+								"byName"
+							],
+							"query": [
+								{
+									"key": "sourceName",
+									"value": "一"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14.4 根据分类查询房源",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/14_house/userinfo/housing/list/byType?houseType=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"14_house",
+								"userinfo",
+								"housing",
+								"list",
+								"byType"
+							],
+							"query": [
+								{
+									"key": "houseType",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "15、找工作",
+			"item": [
+				{
+					"name": "15.1 查询热门职位",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/15_job//userinfo/profession/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"15_job",
+								"",
+								"userinfo",
+								"profession",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15.2 查询求职列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/15_job//userinfo/post/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"15_job",
+								"",
+								"userinfo",
+								"post",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15.3 根据热门职位编号查询职位信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/15_job//userinfo/post/list/byId?professionId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"15_job",
+								"",
+								"userinfo",
+								"post",
+								"list",
+								"byId"
+							],
+							"query": [
+								{
+									"key": "professionId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15.4 根据职位名称搜索职位",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/15_job//userinfo/post/list/byName?name=一",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"15_job",
+								"",
+								"userinfo",
+								"post",
+								"list",
+								"byName"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "一"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15.5 查询职位详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/15_job//userinfo/post/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"15_job",
+								"",
+								"userinfo",
+								"post",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15.6 根据公司编号查询公司信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/15_job//userinfo/company/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"15_job",
+								"",
+								"userinfo",
+								"company",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15.7 投简历",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"3\",\n    \"postName\":\"医生助理五险一金双休\",\n    \"companyName\":\"必龙同学公司\",\n    \"money\":\"22222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/15_job//userinfo/deliver",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"15_job",
+								"",
+								"userinfo",
+								"deliver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15.8 查询投简历历史",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"3\",\n    \"postName\":\"医生助理五险一金双休\",\n    \"companyName\":\"牙大夫\",\n    \"money\":\"22222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/15_job//userinfo/deliver/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"15_job",
+								"",
+								"userinfo",
+								"deliver",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15.10 查询用户求职信息",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"3\",\n    \"postName\":\"医生助理五险一金双休\",\n    \"companyName\":\"牙大夫\",\n    \"money\":\"22222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/15_job//userinfo/resume/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"15_job",
+								"",
+								"userinfo",
+								"resume",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15.11 修改用户求职信息",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"1\",\n    \"address\":\"天龙人2222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/15_job//userinfo/resume/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"15_job",
+								"",
+								"userinfo",
+								"resume",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15.12 新增用户求职信息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"10\",\n    \"address\":\"天龙人2222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/15_job//userinfo/resume/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"15_job",
+								"",
+								"userinfo",
+								"resume",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "16、堵车移车",
+			"item": [
+				{
+					"name": "16.2 查询挪车记录",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/16_move_car/userinfo/caraction?userId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"16_move_car",
+								"userinfo",
+								"caraction"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZWxvbmciLCJleHAiOjE2NDc3NDk3Nzd9.AxKpH45qnDpTX4teDPC6-Hn6bgdHTLLg4eGw1pM9F90",
+			"type": "string"
+		}
+	]
+}

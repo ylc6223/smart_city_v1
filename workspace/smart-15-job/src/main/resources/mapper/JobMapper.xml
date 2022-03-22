@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.belong.smart.mapper.JobMapper">
+    <update id="updateResume">
+        update
+            job_resume
+        <set>
+            <if test="files != null">
+                files = #{files}
+            </if>
+            <if test="positionId != null">
+                position_id = #{positionId},
+            </if>
+            <if test="money != null">
+                money = #{money},
+            </if>
+            <if test="individualResume != null">
+                individual_resume = #{individualResume},
+            </if>
+
+            <if test="mostEducation != null">
+                most_education = #{mostEducation},
+            </if>
+            <if test="education != null">
+                education = #{education},
+            </if>
+
+            <if test="address != null">
+                address = #{address},
+            </if>
+
+            <if test="experience != null">
+                experience = #{experience},
+            </if>
+        </set>
+        where
+            user_id = #{userId};
+    </update>
+    <select id="getHotList" resultType="java.util.Map">
+        -- 15.1 查询热门职位
+        SELECT *
+        FROM job_hot_profession;
+    </select>
+    <select id="getPostList" resultType="java.util.Map">
+        -- 15.2 查询求职列表
+        SELECT t1.*,
+               t2.company_name
+        FROM job_post as t1,
+             job_company as t2
+        WHERE t1.company_id = t2.id;
+    </select>
+    <select id="getPostListById" resultType="java.util.Map">
+        -- 15.3 根据热门职位编号查询职位信息
+        SELECT t1.*,
+               t2.company_name
+        FROM job_post as t1,
+             job_company as t2
+        WHERE t1.company_id = t2.id
+          AND t1.profession_id = #{professionId};
+    </select>
+    <select id="getPostListByName" resultType="java.util.Map">
+        SELECT t1.*,
+               t2.company_name
+        FROM job_post as t1,
+             job_company as t2
+        WHERE t1.company_id = t2.id
+          AND t1.`name` LIKE concat("%", #{name}, "%");
+    </select>
+    <select id="getPostDetial" resultType="java.util.Map">
+        SELECT t1.*,
+               t2.company_name
+        FROM job_post as t1,
+             job_company as t2
+        WHERE t1.company_id = t2.id
+          AND t1.id = #{id};
+    </select>
+    <select id="getCompanyById" resultType="java.util.Map">
+        -- 15.6 根据公司编号查询公司信息
+        SELECT *
+        FROM job_company
+        WHERE id = #{id};
+    </select>
+</mapper>

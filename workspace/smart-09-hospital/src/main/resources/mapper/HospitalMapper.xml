@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.belong.smart.mapper.HospitalMapper">
+
+    <select id="getImgList" resultType="com.belong.smart.entity.po.HospitalImg">
+        select *
+        from hospital_img  where hospital_id = #{hospitalId}
+    </select>
+    <select id="getHospitaInfo" resultType="com.belong.smart.entity.po.HospitalRegistration">
+        select *
+        from hospital_registration where id = #{id};
+    </select>
+    <select id="getHospitaList" resultType="com.belong.smart.entity.po.HospitalRegistration">
+        select *
+        from hospital_registration;
+    </select>
+    <select id="searchHospital" resultType="com.belong.smart.entity.po.HospitalRegistration">
+        select *
+        from hospital_registration where hospital_name like concat('%', #{hospitalName}, '%');
+    </select>
+    <select id="getType" resultType="com.belong.smart.entity.po.HospitalRegistrationTypes">
+        select *
+        from hospital_registration_types where did = #{did};
+    </select>
+    <select id="getReserveList" resultType="java.util.Map">
+        SELECT
+            t1.*,
+            t2.category_name
+        FROM
+            hospital_reserved_order as t1,
+            hospital_registration_types as t2
+        WHERE
+            t1.types_id = t2.id
+          AND
+            t1.user_id = #{userId};
+    </select>
+    <select id="getReserveDetail" resultType="java.util.Map">
+        SELECT
+            t1.*,
+            t2.category_name
+        FROM
+            hospital_reserved_order as t1,
+            hospital_registration_types as t2
+        WHERE
+            t1.types_id = t2.id
+          AND
+            t1.id = #{id};
+
+    </select>
+</mapper>

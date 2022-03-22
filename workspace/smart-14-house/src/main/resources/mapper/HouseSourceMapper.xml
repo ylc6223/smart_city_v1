@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.belong.smart.mapper.HouseSourceMapper">
+
+    <select id="getHouseList" resultType="com.belong.smart.entity.HouseSource">
+        select *
+        from house_source;
+    </select>
+    <select id="getHouseDetial" resultType="com.belong.smart.entity.HouseSource">
+        SELECT * FROM house_source WHERE id = #{id};
+    </select>
+    <select id="getHouseByName" resultType="com.belong.smart.entity.HouseSource">
+        SELECT * FROM house_source WHERE source_name LIKE concat('%', #{name}, "%")
+    </select>
+    <select id="getHouseByType" resultType="com.belong.smart.entity.HouseSource">
+        SELECT * FROM house_source WHERE house_type = #{type};
+    </select>
+</mapper>

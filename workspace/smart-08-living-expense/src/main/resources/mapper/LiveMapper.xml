@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.belong.smart.mapper.LiveMapper">
+    <update id="payByDoor">
+        UPDATE
+            live_householder t1
+        SET
+            t1.balance = t1.balance + #{balance}
+        WHERE
+            t1.user_id = #{userId}
+          AND
+            t1.id = #{id}
+          AND
+            t1.door_no = #{doorNo}
+    </update>
+
+    <select id="getTypeList" resultType="java.util.Map">
+        SELECT
+            t1.*,
+            t2.type_name,
+            t4.owner_name,
+            t3.live_name
+        FROM
+            live_pay_relations as t1,
+            live_pay_object as t2,
+            live_pay_category as t3,
+            live_householder as t4
+        WHERE
+            t1.ob_id = t2.id
+          AND
+            t1.door_id = t4.door_no
+          AND
+            t1.classify_id = t3.id
+          AND
+            t1.user_id = #{userId}
+          AND
+            t1.classify_id = #{classifyId};
+    </select>
+
+    <select id="getPayInfo" resultType="com.belong.smart.entity.po.LiveHouseholder">
+        SELECT * FROM live_householder WHERE user_id = #{userId};
+    </select>
+    <select id="getPayDetial" resultType="java.util.Map">
+        SELECT
+            t1.*,
+            t2.title,
+            t2.electricity_money,
+            t2.charge_unit
+        FROM
+            live_householder as t1,
+            live_electricity_details as t2
+        WHERE
+            t1.id = t2.door_id
+
+          AND
+            t1.user_id = #{userId}
+          AND
+            t1.door_no = #{doorNo};
+
+    </select>
+</mapper>

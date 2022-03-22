@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    username: root
+    password: 12345678
+    url: jdbc:mysql://localhost:3306/springboot_vue_blog
+
+mybatis-plus:
+  configuration:
+    # 配置日志（默认控制台输出）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # 扫描resources -> mapper目录下的所有xml文件
+#  mapper-locations: classpath:mapper/*.xml
+
+server:
+  port: 8081

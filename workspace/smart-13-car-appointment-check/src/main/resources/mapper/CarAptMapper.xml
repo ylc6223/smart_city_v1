@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.belong.smart.mapper.CarAptMapper">
+    <update id="updateCars">
+        update cars set plate_num = #{plateNum},
+                        main_num = #{mainNum},
+                        car_type = #{carType},
+                        mileage = #{mileage},
+                        phone = #{phone}
+                where user_id = #{userId}
+    </update>
+
+    <select id="getAptList" resultType="java.util.Map">
+        SELECT
+            t1.*,
+            t2.apt_time,
+            t2.success,
+            t3.phone as palce_phone,
+            t3.address,
+            t3.place_name,
+            t3.remarks
+        FROM
+            cars as t1,
+            car_apt as t2,
+            car_check_place as t3
+        WHERE
+            t1.user_id = t2.user_id
+          AND
+            t2.address_id = t3.id
+          AND
+            t1.user_id = #{userId};
+    </select>
+</mapper>

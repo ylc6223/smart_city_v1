@@ -1,0 +1,33 @@
+spring:
+  # ???
+  devtools:
+    restart:
+      enabled: true  #???????
+      additional-paths: src/main/java #????
+      exclude: WEB-INF/**
+    freemarker:
+      cache: false    #??????????????
+    thymeleaf:
+      encoding: utf-8
+      # ????
+      cache: false
+
+  datasource:
+    username: root
+    password: 12345678
+    url: jdbc:mysql://localhost:3306/springboot_vue_blog
+
+mybatis-plus:
+  configuration:
+    # ?????????????
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+mybatis:
+  # ??resources -> mapper??????xml??
+  mapper-locations: classpath:mapper/*.xml
+
+server:
+  port: 8081
+
+
+
